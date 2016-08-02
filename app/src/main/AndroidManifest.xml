@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cluo29.hmswatermarking"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Aware"
+        tools:replace="android:icon, android:theme">
+
+
+        <provider android:name=".Provider" android:authorities="${applicationId}.provider.hmswatermarking" android:exported="true" android:readPermission="com.aware.READ_CONTEXT_DATA" android:writePermission="com.aware.WRITE_CONTEXT_DATA"/>
+
+        <service android:name="cluo29.hmswatermarking.DeviceIDProcedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeFloatCPUTest" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.Encyption" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.Procedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.CharProcedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeFloatProcedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeFloatProcedure2Bits" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.FloatProcedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeDoubleProcedure" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeFloatComparison" android:exported="true" />
+        <service android:name="cluo29.hmswatermarking.ThreeFloatComparison2Bits" android:exported="true" />
+
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
